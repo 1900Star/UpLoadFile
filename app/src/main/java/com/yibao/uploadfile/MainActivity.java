@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-//                        UpLoadThreed.okHttpUpImage(okHttpUrl, bigFile);
-                        UpLoadThreed.upHttpLoadPic(okHttpUrl, bigFile.getAbsolutePath());
+//                        httpUrlConnectionUpLoadUtil.okHttpUpImage(okHttpUrl, bigFile);
+                        httpUrlConnectionUpLoadUtil.upHttpLoadPic(okHttpUrl, bigFile.getAbsolutePath());
                     }
                 }).start();
             if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(age)) {
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             String name = mEdtName.getText().toString().trim();
             String age = mEdtAge.getText().toString().trim();
             new Thread(() -> {
-                String result = UpLoadThreed.httpUrlLoadText(textUrl, name, age);
+                String result = httpUrlConnectionUpLoadUtil.httpUrlLoadText(textUrl, name, age);
                 LogUtil.d("客户端收到返回的信息 ： " + result);
                 if (result.equals("400")) {
                     LogUtil.d(" 没有消息返回 ！");
@@ -105,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void upLoad() {
 //        正常的HttpUrlConnection上传图片
-//        UpLoadThreed.upHttpLoadPic(url, fileName.getAbsolutePath());
+//        httpUrlConnectionUpLoadUtil.upHttpLoadPic(url, fileName.getAbsolutePath());
 //        正常的HttpUrlConnection上传图片带进度
-        UpLoadThreed.httpUrlLoadProgress(url, fileName.getAbsolutePath());
+        httpUrlConnectionUpLoadUtil.httpUrlLoadProgress(url, fileName.getAbsolutePath());
 //        正常OkHttp上传图片
 
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        String path1 = fileName.getAbsolutePath();
 //        String path2 = fileName2.getAbsolutePath();
-//        UpLoadThreed.sendMultipart(url, path2, path1);
+//        httpUrlConnectionUpLoadUtil.sendMultipart(url, path2, path1);
 
     }
 
