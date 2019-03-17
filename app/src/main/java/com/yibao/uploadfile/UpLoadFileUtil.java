@@ -150,7 +150,7 @@ public class UpLoadFileUtil {
         int i = 0;
         for (File file : fileList) {
             if (file.exists()) {
-                Log.i("imageName:", file.getName());//经过测试，此处的名称不能相同，如果相同，只能保存最后一个图片，不知道那些同名的大神是怎么成功保存图片的。
+                Log.i("imageName:", file.getName());
                 mbody.addFormDataPart("file" + i, file.getName(), RequestBody.create(MEDIA_TYPE_PNG, file));
                 i++;
             }
