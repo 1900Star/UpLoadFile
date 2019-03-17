@@ -3,7 +3,7 @@ package com.yibao.uploadfile;
 /*
  *  @项目名：  UpLoadFile 
  *  @包名：    com.yibao.uploadfile
- *  @文件名:   httpUrlConnectionUpLoadUtil
+ *  @文件名:   HttpUrlConnectionUpLoadUtil
  *  @创建者:   Stran
  *  @创建时间:  2017/12/26 17:44
  *  @描述：    TODO
